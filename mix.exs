@@ -1,9 +1,9 @@
-defmodule UeberauthDropbox.Mixfile do
+defmodule UeberauthDocusign.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :ueberauth_dropbox,
-     name: "Ueberauth Dropbox",
+    [app: :ueberauth_docusign,
+     name: "Ueberauth Docusign",
      description: description(),
      package: package(),
      version: "0.2.0",
@@ -11,7 +11,7 @@ defmodule UeberauthDropbox.Mixfile do
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      deps: deps(),
-     source_url: "https://github.com/ryotsu/ueberauth_dropbox"
+     source_url: "https://github.com/flowmap/ueberauth_docusign"
     ]
   end
 
@@ -43,13 +43,13 @@ defmodule UeberauthDropbox.Mixfile do
 
 
   defp description do
-    "An Ueberauth strategy for using Dropbox"
+    "An Ueberauth strategy for using Docusign"
   end
 
   defp package do
     [files: ["lib", "mix.exs", "README.md", "LICENSE"],
      maintainers: ["Mayank Tripathi"],
      licenses: ["MIT"],
-     links: %{"GitHub": "https://github.com/ryotsu/ueberauth_dropbox"}]
+     links: %{"GitHub": "https://github.com/flowmap/ueberauth_docusign"}]
   end
 end

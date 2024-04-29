@@ -1,6 +1,6 @@
-defmodule UeberauthDropboxTest do
+defmodule UeberauthDocusignTest do
   use ExUnit.Case
-  doctest UeberauthDropbox
+  doctest UeberauthDocusign
 
   test "the truth" do
     assert 1 + 1 == 2

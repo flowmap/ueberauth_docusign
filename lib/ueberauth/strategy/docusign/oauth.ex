@@ -1,14 +1,4 @@
-defmodule Ueberauth.Strategy.Dropbox.OAuth do
-  @moduledoc """
-  An implementation of OAuth2 for dropbox.
-
-  To add your `client_id` and `client_secret` include these values in your
-  configuration.
-
-      config :ueberauth, Ueberauth.Strategy.Dropbox.OAuth,
-        client_id: System.get_env("DROPBOX_CLIENT_ID"),
-        client_secret: System.get_env("DROPBOX_CLIENT_SECRET")
-  """
+defmodule Ueberauth.Strategy.Docusign.OAuth do
 
   use OAuth2.Strategy
 
@@ -18,23 +8,12 @@ defmodule Ueberauth.Strategy.Dropbox.OAuth do
   @defaults [
     strategy: __MODULE__,
     site: "https://api.dropboxapi.com/2",
-    authorize_url: "https://www.dropbox.com/oauth2/authorize",
+    authorize_url: "https://www.docusign.com/oauth2/authorize",
     token_url: "https://api.dropboxapi.com/oauth2/token",
   ]
 
-  @doc """
-  Construct a client for requests to Dropbox.
-
-  Optionally include any OAuth2 options here to be merged with the defaults.
-
-      Ueberauth.Strategy.Dropbox.OAuth.client(redirect_uri: "http://localhost:4000/auth/dropbox/callback")
-
-  This will be setup automatically for you in `Ueberauth.Strategy.Dropbox`.
-  These options are only useful for usage outside the normal callback phase
-  of Ueberauth.
-  """
   def client(opts \\ []) do
-    config = Application.get_env(:ueberauth, Ueberauth.Strategy.Dropbox.OAuth)
+    config = Application.get_env(:ueberauth, Ueberauth.Strategy.Docusign.OAuth)
     client_opts =
       @defaults
       |> Keyword.merge(config)
@@ -46,10 +25,6 @@ defmodule Ueberauth.Strategy.Dropbox.OAuth do
     |> OAuth2.Client.put_serializer("application/json", json_library)
   end
 
-  @doc """
-  Provides the authorize url for the request phase of Ueberauth. No need to
-  call this usually.
-  """
   def authorize_url!(params \\ [], opts \\ []) do
     opts
     |> client()

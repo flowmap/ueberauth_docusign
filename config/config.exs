@@ -10,11 +10,11 @@ use Mix.Config
 
 # You can configure for your application as:
 #
-#     config :ueberauth_dropbox, key: :value
+#     config :ueberauth_docusign, key: :value
 #
 # And access this configuration in your application as:
 #
-#     Application.get_env(:ueberauth_dropbox, :key)
+#     Application.get_env(:ueberauth_docusign, :key)
 #
 # Or configure a 3rd-party app:
 #
